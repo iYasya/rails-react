@@ -1,4 +1,4 @@
-var Comments = React.createClass({
+var CommentList = React.createClass({
   getInitialState: function() {
     return { data: [] };
   },
@@ -17,22 +17,12 @@ var Comments = React.createClass({
   },
   render: function() {
     var commentNodes = this.state.data.map(function(comment, index) {
-      return (
-        <div key={comment.id}>
-          <h1>{comment.author}</h1>
-          <p dangerouslySetInnerHTML={{ __html: comment.text }}></p>
-        </div>
-      );
+      return <Comment data={comment} key={comment.id} />;
     });
     return (
-      <div className="commentList">
+      <div className="comment-list">
         {commentNodes}
       </div>
     );
   }
 });
-
-ReactDOM.render(
-  <Comments url='/comments.json' />,
-  document.getElementById('content')
-);
