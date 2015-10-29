@@ -1,6 +1,6 @@
 //= require_tree ./components
 
 ReactDOM.render(
-  <CommentList url='/comments.json' />,
+  <CommentBox url='/comments.json' />,
   document.getElementById('content')
 );
