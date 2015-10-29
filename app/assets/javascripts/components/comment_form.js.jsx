@@ -12,10 +12,16 @@ var CommentForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Your name" ref="author" />
-        <input type="text" placeholder="Say something..." ref="text" />
-        <input type="submit" value="Post" />
+      <form className="comment-form" onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <label>Author</label>
+          <input className="form-control" type="text" placeholder="Your name" ref="author" />
+        </div>
+        <div className="form-group">
+          <label>Text</label>
+          <input className="form-control" type="text" placeholder="Say something..." ref="text" />
+        </div>
+        <button className="btn btn-primary" type="submit">Post</button>
       </form>
     );
   }
